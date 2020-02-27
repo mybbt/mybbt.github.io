@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>图片问题</title>
+    <link href="/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/"/>
+    <url>/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/</url>
+    
+    <content type="html"><![CDATA[<p>今日问题</p><h2 id="外链图片加载失败"><a href="#外链图片加载失败" class="headerlink" title="外链图片加载失败"></a>外链图片加载失败</h2><h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p><strong>1.可能是由于服务器检测到请求头中的refer不是自家域名，为了减轻服务器压力，拦截访问</strong><br><strong>学习资料： <a href="https://blog.csdn.net/qq_42248939/article/details/97377126" target="_blank" rel="noopener">https://blog.csdn.net/qq_42248939/article/details/97377126</a></strong></p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p><strong>1.下载到本地访问</strong></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java笔记</title>
     <link href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/"/>
     <url>/2020/02/26/Java%E7%AC%94%E8%AE%B0/</url>
