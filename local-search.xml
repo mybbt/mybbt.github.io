@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Java笔记</title>
+    <link href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/"/>
+    <url>/2020/02/26/Java%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<p>Java新手上路，前方慢行，谨以此记录自己的第一个博客笔记</p><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><p><strong>1.Public类的名字与文件名一致</strong><br><strong>2.类的构造器(默认存在且其权限修饰符与所属类一致，也可以自己编写)，父类构造器不能被子类继承</strong><br><strong>3.可变个数的参数：如public void test (String…args){}</strong><br><strong>4.四种访问权限修饰符：private(类内部使用),default(类内部+包）,protected(类内部+包+子类),public(任何地方)</strong></p><h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><p><strong>5.关键字this：当前正在引用的对象或者当前正在初始化的对象，this(…..)可用来调用构造器(要求1.必须存在未使用this()调用的构造器  2.this()调用要放在首行)。若本类没有则在父类查找</strong><br><strong>6.JavaBean:拥有Set和Get方法的公共类且属性私有，一种可重用组件</strong><br><strong>7.类的继承只能有一个父类(单继承)，若对继承类方法重写，权限限定比原方法严格（如原方法是public,重写后的方法就是public而不能是protected）</strong></p><h2 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h2><p><strong>8.Super用于调用父类中的指定操作，不局限于直接父类，还可以对多层继承父类调用，且Super调用写在第一行</strong><br><strong>9.子类要调用父类构造器，默认调用父类无参构造器。若父类没有无参构造器，则自需要手动调用，</strong><br><strong>10.Super和this调用构造器只能使用其中一个，因为两者都要求占据第一行</strong><br><strong>11. 子对象实例化过程：一、先加载父类字节码，在加载子类字节码. 二、在堆内存中开辟空间并分配地址，默认初始化. 三、子类构造函数进栈，显式初始化父类属性. 四、父类构造方法进栈，显式初始化子类属性，执行完后父类构造方法出栈</strong><br><strong>五、显式初始化子类属性，返回地址给引用变量，子类构造方法出栈.</strong></p><h2 id="第四天"><a href="#第四天" class="headerlink" title="第四天"></a>第四天</h2><p><strong>12.多态存在的三个必要条件：继承，重写，父类引用指向子类对象(例如:student继承person类，student中重写了person的show方法，{person e = new student();e.show()动态绑定，最终输出的是子类student中的show})。方法形参为父类，可以传参时传入子类，调用参数的方法时会用到多态</strong><br><strong>13.Instanceof操作符：x instanceof A：检验对象x是否是类A的对象，返回值为boolean(若x instanceof A为true,x instanceof A的父类,也为true)</strong><br><strong>14.==：基本类型比较是值等则为true，引用类型比较则是指向同一个对象才返回true；equals()当比较例如String类是比较String的值相同则为true，而不是比较是否指向同一个对象</strong><br><strong>15.包装类：boolean b=new Boolean(“true”)这是自动拆箱，Boolean b=true这是自动装箱，都是在JDK1.5后支持。包装类方便基本类型与字符串的转换</strong><br><strong>16.System.out.println(x)//若X是对象，则相当于输出x.toString().</strong><br><strong>17.用static修饰的方法和变量可以直接用(类名.方法)调用，随着类的加载而加载，被所有对象共享</strong><br><strong>18.单例模式：用static创建变量，进行一次实例化，共同使用，分为1.饿汉式 2.懒汉式(两者区别，饿汉式在类实例化时就创建，懒汉式在调用getInstance()方法时才创建)</strong><br><strong>19.代码块先于构造器初始化,静态代码块值执行一次</strong><br><strong>20.匿名内部类用于隐式继承父类或实现接口，可以在匿名内部类中用代码块初始化</strong><br><strong>21.Final修饰的类不能被继承，final修饰的变量不能被修改且必须显示赋值，final修饰的方法不能被子类重写</strong></p><h2 id="第五天"><a href="#第五天" class="headerlink" title="第五天"></a>第五天</h2><p><strong>22.Abstract修饰抽象方法和抽象类，抽象类不能实例化，但可以由构造器，继承抽象类的子类必须重写抽象类中的抽象方法，抽象方法是只有声明没有实现。若某类中有抽象方法，则该类必须声明为抽象类</strong><br><strong>23.模板设计模式：定义一个抽象类，定义一个抽象类，子类继承抽象类，可以直接使用而不用重写部分已经写好的通用方法。</strong><br><strong>24.接口与抽象类的区别：1.接口中（默认public abstract） 只能声明方法而不能实现方法2.接口中的变量只能是public static final类型的 3.接口不能含有静态代码块、静态方法以及构造器 4.一个类只能继承一个抽象类，但是却可以实现多个接口</strong><br><strong>25.工厂模式：定义接口，将实现同一接口的不同类放入工厂，并延迟到子类再决定实例化哪一个类。  1.定义一个产品接口 2.创建多个实现接口的不同实体类 3.创建一个工厂，基于开发者对实体类的需求返回类</strong><br><strong>26.内部类也是类，但特殊点在若内部类是static修饰，就不能使用外部类的非static的成员变量。而非static的内部类中的成员不能声明为static（内部类主要用来解决JAVA不能多层继承的问题）</strong><br><strong>27.异常问题，子类不能抛出比父类更大范围的异常</strong><br><strong>28.Java分为三大集合：Set,Map,List。set和list使用iterator或者foreach迭代</strong><br><strong>29.treeSet有序，treeMap有序</strong><br><strong>30.Map使用keySet或者entrySet遍历</strong><br><strong>31.Collections工具</strong></p><h2 id="第六天"><a href="#第六天" class="headerlink" title="第六天"></a>第六天</h2><p><strong>32.泛型：1.泛型类；2.泛型接口：实现泛型接口时如果不具体指定类型，则实现类也需要加上泛型（例如class A<T> implements interfa<T>）；3.泛型方法：public <T> void test(T t){}。  在静态方法中不能使用类定义泛型，若需要使用，只能使用静态方法自己定义的泛型public static <T> void test(T t){}</strong><br><strong>33.通配符是“？”.1.&lt;? extends Person&gt;表示通配只接受Person及其子类的引用，2.&lt;? super Person&gt;表示通配只接受Person及其父类的引用 3.&lt;？Extends Comparable&gt;表示通配只接受实现Comparable接口的类的引用</strong><br><strong>34.枚举类：</strong><br><strong>Season summer = Season.SUMMER;</strong><br><strong>Summer.showInfo();</strong><br><strong>每个枚举都是单例模式</strong><br><strong>35.注解：编写注解需要使用@interface声明，在注解前面也需要加其他注解来限制编写的注解的作用范围：如下</strong><br><strong>36.文件流：File类：其中，File.separator为当前系统分隔符，File只能操作文件本身，比如删除文件，但不能改变文件的内容</strong><br><strong>37.文件流：FileOutputStream输出流（字节流），将数据输出到某文件，FileInputStream输入流（字节流），从某文件中获取数据输入（可用byte数组存储）。FileReader输入流（字符流，可以char数组存储）</strong><br><strong>38.缓冲流：先将数据放入内存中，再在内存中操作数据，提升性能。BufferedInputStream和BufferedOutputStream</strong><br><strong>39.转换流：InputStreamReader等等。。不同文本格式的转换，比如GBK到UTB-8</strong><br><strong>40.标准输入输出流</strong><br><strong>41.对象流：序列化和反序列化（包名，类名等要完全一致）</strong><br><strong>42.反射机制：前提是JVM已经加载过这个类</strong><br><strong>反射机制中的Class代表该字节码文件，Class类是JVM创建的表类信息的类，而Object是所有类的父类，可以利用Class.class.isAssignableFrom(Object.class)来判断子类父类关系</strong><br><strong>可以利用反射机制调用类的私有方法和私有变量（这类操作会破坏类的封装性）</strong><br><strong>43.Java动态代理：当需要修改方法执行前或执行后的操作时，利用动态代理可以简化操作，想要通过Proxy.newProxyInstance方法被代理则此对象的类需要实现接口。。？！</strong><br><strong>JDK实现：1.自己定义的接口 2.实现这个接口 3.实现InvocationHandler接口  4.利用第三步中的类获取代理类，调用方法（JVM会自动生成Proxy类文件，调用InvocationHandler接口中实现Invoke方法达到最终目的）</strong><br><strong>44.Java静态代理和动态代理讲解：</strong><br><strong><a href="https://www.jianshu.com/p/9bcac608c714" target="_blank" rel="noopener">https://www.jianshu.com/p/9bcac608c714</a></strong><br><strong><a href="https://www.bilibili.com/video/av63885236" target="_blank" rel="noopener">https://www.bilibili.com/video/av63885236</a></strong><br><strong>45.创建线程：1.继承thread类 2.实现Runnable接口</strong></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>我的博客</title>
+    <link href="/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<p>博客测试</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2020/02/25/hello-world/"/>
+    <url>/2020/02/25/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
