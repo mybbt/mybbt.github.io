@@ -18,7 +18,7 @@
   <meta name="description" content="基于Hexo">
   <meta name="author" content="mybbt">
   <meta name="keywords" content="">
-  <title>mybbt</title>
+  <title>Spring笔记 ~ mybbt</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
@@ -41,7 +41,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -100,7 +100,7 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
+    <div class="view intro-2" id="background" false
          style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
@@ -111,12 +111,43 @@
             </span>
 
             
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 二月 27日 2020, 5:27 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    299 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      1 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="fas fa-angle-down scroll-down-arrow"></i>
-            </div>
           
         </div>
       </div>
@@ -125,189 +156,97 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><ol>
+<li>Spring是非入侵式框架，基于Interface21框架；IOC+AOP+事物处理</li>
+<li>控制反转(IOC)：对象的创建与对象间的依赖关系完全硬编码在程序中并由程序自己控制，而控制反转则将控制权转移给第三方； 可以利用依赖注入(DI)实现</li>
+<li>有XML和注解两种实现IOC</li>
+<li>XML：</li>
+</ol>
+<ul>
+<li>使用Spring来创建对象，在Spring中都称为bean</li>
+<li>在bean中来实现对象的属性赋值</li>
+<li>这种情况下，程序不用new对象，只需要被动接受Spring容器创建好的对象</li>
+<li>一句话：对象由Spring创建，管理，装配</li>
+</ul>
+<ol start="5">
+<li>接上：</li>
+</ol>
+<ul>
+<li>bean中的property基本类型用value，引用类型用ref;其中property必须搭配Set方法使用</li>
+</ul>
+<ol start="6">
+<li>IOC对象创建</li>
+</ol>
+<ul>
+<li>无参构造函数</li>
+<li>有参构造函数：可以使用多种方式在配置文件中赋值没具体查阅Spring文档</li>
+</ul>
+<ol start="7">
+<li>当使用ClassPathXMLApplication(“bean.xml”)即配置文件加载后，只要beans.xml中配置了bean,即使没有调用，也会创建对象，可以使用无参构造函数测试这种情况，且一个beans在容器中只创建了一个</li>
+</ol>
+<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><p>8. </p>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/02/27/Spring%E7%AC%94%E8%AE%B0/" target="_blank">
-          <img src="/img/spring.jpg" alt="Spring笔记"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/02/27/Spring%E7%AC%94%E8%AE%B0/">
-        <p class="h4 index-header">Spring笔记</p>
-      </a>
-
-      <a href="/2020/02/27/Spring%E7%AC%94%E8%AE%B0/">
-        
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-27&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/" target="_blank">
-          <img src="/img/pic.jpg" alt="图片问题"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/">
-        <p class="h4 index-header">图片问题</p>
-      </a>
-
-      <a href="/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/">
-        
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-27&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/" target="_blank">
-          <img src="/img/Java.jpg" alt="Java笔记"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/">
-        <p class="h4 index-header">Java笔记</p>
-      </a>
-
-      <a href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/">
-        
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-26&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" target="_blank">
-          <img src="/img/blog.jpg" alt="我的博客"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-        <p class="h4 index-header">我的博客</p>
-      </a>
-
-      <a href="/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-        
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-25&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto">
-        <a href="/2020/02/25/hello-world/" target="_blank">
-          <img src="/img/hello.jpg" alt="Hello World"
-               class="index-img img-fluid rounded index-thumbnails">
-        </a>
-      </div>
-    
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a href="/2020/02/25/hello-world/">
-        <p class="h4 index-header">Hello World</p>
-      </a>
-
-      <a href="/2020/02/25/hello-world/">
-        
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1"></div>
-        </div>
-      </a>
-
-      <div class="index-btm">
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-25&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-              </div>
-            </div>
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
           </div>
         </div>
       </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="mybbt/mybbt.github.io"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -384,6 +323,26 @@
 
 
 
+  <script src="/js/post.js" ></script>
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+    <script>
+      $(document).ready(function () {
+        tocbot.init({
+          tocSelector: '#tocbot',
+          contentSelector: '.post-content',
+          headingSelector: 'h1,h2,h3,h4,h5,h6',
+          linkClass: 'tocbot-link',
+          activeLinkClass: 'tocbot-active-link',
+          listClass: 'tocbot-list',
+          isCollapsedClass: 'tocbot-is-collapsed',
+          collapsibleClass: 'tocbot-is-collapsible',
+          scrollSmooth: true,
+        });
+      });
+    </script>
+  
+
 
 
 
@@ -410,7 +369,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "φ(❐_❐✧ 人丑就要多读书&nbsp;",
+        "Spring笔记&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 50,
