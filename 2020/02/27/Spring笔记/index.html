@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    337 字
+                    815 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -192,9 +192,51 @@
 <li>有参构造函数：可以使用多种方式在配置文件中赋值没具体查阅Spring文档</li>
 </ul>
 <ol start="7">
-<li>当使用ClassPathXMLApplication(“bean.xml”)即配置文件加载后，只要beans.xml中配置了bean,即使没有调用，也会创建对象，可以使用无参构造函数测试这种情况，且一个beans在容器中只创建了一个</li>
+<li>当使用<code>ClassPathXMLApplication(&quot;bean.xml&quot;)</code>即配置文件加载后，只要beans.xml中配置了bean,即使没有调用，也会创建对象，可以使用无参构造函数测试这种情况，且一个beans在容器中只创建了一个</li>
 </ol>
-<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><p>8. </p>
+<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><ol start="8">
+<li>使用别名标签给同一个类可以取多个名字，还可以直接在bean中使用name取别名，同一个name中取多个别名可以用逗号或空格分割</li>
+<li>在XML配置文件中可以用<code>import</code>标签导入其他配置文件</li>
+<li>多种不同类的属性的具体注入方式看Spring官方文档</li>
+<li>namespace: 命名空间，防止命名冲突；一般有统一的命名格式</li>
+</ol>
+<ul>
+<li>Spring中有P命名空间，<code>&lt;p:name=&quot;...&quot;&gt;&lt;/p&gt;</code>给属性赋值</li>
+<li>Spring中有C命名空间,给有参构造器赋值</li>
+<li>使用需要导入约束</li>
+</ul>
+<ol start="12">
+<li>bean作用域：</li>
+</ol>
+<ul>
+<li>单例模式: Spring默认机制</li>
+<li>原型模式: 每次从容器中get时，都会产生一个新引用</li>
+<li>还有部分作用域涉及到Web</li>
+</ul>
+<ol start="13">
+<li>Spring有自动装配，</li>
+</ol>
+<ul>
+<li><code>autowire=&quot;byName&quot;</code>,byName是自动在容器中查找，根据set方法后的名字来装配，遵循驼峰命名规则</li>
+<li>除了<code>byName</code>还有<code>byType</code>等等，<code>byType</code>要求同类(bean)唯一,默认<code>byType</code></li>
+</ul>
+<ol start="14">
+<li>XML配置实现的功能，同样也能使用注解实现，注解要求JDK1.5和Spring2.5</li>
+</ol>
+<ul>
+<li>注解同样需要导入约束</li>
+<li>使用<code>@Autowired</code>可以省略掉set方法,包含<code>@Autowired</code>的类文件同样要在bean中配置</li>
+<li>同一个类有多个bean时，<code>@Autowired</code>需要搭配<code>@Qualifier</code>使用<code>@Qualifier(value=&quot;&quot;)</code>选取特定的bean的id</li>
+<li>Java中有个<code>@Resource(name=&quot;&quot;)</code>，name可以不写，类似<code>@Autowired + @Qualifier(value=&quot;&quot;)</code>的功能</li>
+</ul>
+<ol start="15">
+<li><code>&lt;context:component-scan base-package=&quot;包名1 包名2...&quot;/&gt;</code>扫描指定包，搭配写在项目中的<code>@Component</code>使用；把普通pojo实例化到spring容器中：</li>
+</ol>
+<ul>
+<li>对上面的解释： 写了<code>@Component</code>的类就相当于在配置文件中写了bean，bean的id默认为类的小写名字(实际上配置文件中没有显式写出这个类的bean)</li>
+<li>使用<code>@Value(&quot;&quot;)</code>给属性赋值</li>
+</ul>
+<p>16. </p>
 
             <hr>
           </div>
