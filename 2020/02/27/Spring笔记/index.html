@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    815 字
+                    1.1k 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      3 分钟
+                      4 分钟
                   </span>&nbsp;
                 
 
@@ -214,7 +214,7 @@
 <li>还有部分作用域涉及到Web</li>
 </ul>
 <ol start="13">
-<li>Spring有自动装配，</li>
+<li>自动装配：</li>
 </ol>
 <ul>
 <li><code>autowire=&quot;byName&quot;</code>,byName是自动在容器中查找，根据set方法后的名字来装配，遵循驼峰命名规则</li>
@@ -236,7 +236,22 @@
 <li>对上面的解释： 写了<code>@Component</code>的类就相当于在配置文件中写了bean，bean的id默认为类的小写名字(实际上配置文件中没有显式写出这个类的bean)</li>
 <li>使用<code>@Value(&quot;&quot;)</code>给属性赋值</li>
 </ul>
-<p>16. </p>
+<ol start="16">
+<li><code>@Configuration</code>方式也可以配置bean,结合<code>@component(&quot;完全版类名&quot;)</code>指定类文件，在需要的方法前一行<code>@Bean</code>，在使用时使用<code>AnnotationConfigApplicationContext(参数)</code>，然后<code>getBean(&quot;方法名&quot;)</code>； 与XML配置的操作类似</li>
+<li>代理模式：可以在不修改原有代码的基础上对某些功能进行增加</li>
+<li>面向切面(AOP)：Spring版动态代理</li>
+<li>AOP实现:先导入实现AOP的jar包，再将自己写的增强版的类用bean注入容器</li>
+</ol>
+<ul>
+<li>配置文件版: <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- excution是一个表达式，具体查Spring文档 --&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">aop:poincut</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">excution</span>=<span class="string">""</span>/&gt;</span>  </span><br><span class="line">		<span class="comment">&lt;!--切入点设置好，再设置切入位置，具体查Spring文档 --&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span>  </span><br><span class="line"><span class="comment">&lt;!-- excution是一个表达式，具体查Spring文档 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">aop:poincut</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">excution</span>=<span class="string">""</span>/&gt;</span></span><br><span class="line">			<span class="comment">&lt;!--切入点设置好，再设置切入位置，具体查Spring文档 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>以上非完全版，具体以Spring文档为准，暂时不细查，等到项目实战中再细化</p>
+<ul>
+<li>注解版：<code>@Aspect</code>,<code>@Before</code>等等，同样需要在配置文件中配置，具体查Spring，大概在Spring文档的5.4节中</li>
+</ul>
 
             <hr>
           </div>
