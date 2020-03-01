@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    786 字
+                    1k 字
                   </span>&nbsp;
                 
 
@@ -136,13 +136,6 @@
                   </span>&nbsp;
                 
 
-                
-                  <!-- 不蒜子统计文章PV -->
-                  
-                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
-                  <span id="busuanzi_container_page_pv">
-                    <span id="busuanzi_value_page_pv"></span> 次
-                  </span>&nbsp;
                 
               </p>
             
@@ -206,8 +199,18 @@
 <li><code>coalesce(name, &#39;总数&#39;)</code>和<code>WITH ROLLUP</code></li>
 <li>MD5加密：<code>UPDATE 表名 SET pwd=MD5(pwd) where 约束条件</code>或者插入时加密：<code>INSERT INTO 表名 VALUES(...,...,MD5(...))</code></li>
 <li>事物(满足ACID原则)：<code>SAVEPOINT(保存点)</code>  <code>RELEASE SAVEPOINT</code>  <code>ROLLBACK TO SAVEPOINT</code></li>
-<li>索引：</li>
+<li>索引：在数据量庞大的时候能极大的优化性能：<a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html" target="_blank" rel="noopener">http://blog.codinglabs.org/articles/theory-of-mysql-index.html</a></li>
 </ol>
+<ul>
+<li><code>EXPLAIN SELECT</code>(相比<code>SELECT</code>会显示一些特别的信息)</li>
+</ul>
+<ol start="21">
+<li>数据库备份</li>
+<li>使用Java中的<code>PreparedStatement</code>防止SQL注入</li>
+<li>关系型数据库范式：第一范式要求每一列中的信息都不可分割，第二范式要求每一列都与所有主键完全依赖(或者说相关)，第三范式要求每一列信息直接依赖，不能间接相关(例如A -&gt; B,B -&gt; C；那么A和B在一张表，B和C则应放在另一张表)<br>PS：上文中的(依赖)可以换成(相关)，这样更通俗；上文的总结完全依赖于下面两个链接中的精华，第一个链接精炼，第二个链接通俗<br><a href="https://www.jianshu.com/p/08d123026438" target="_blank" rel="noopener">https://www.jianshu.com/p/08d123026438</a><br><a href="https://www.cnblogs.com/wsg25/p/9615100.html" target="_blank" rel="noopener">https://www.cnblogs.com/wsg25/p/9615100.html</a></li>
+<li>数据库连接池</li>
+</ol>
+<p>PS： 了解的东西多了，才发现还要学习的东西更多</p>
 
             <hr>
           </div>
@@ -302,20 +305,6 @@
     <br>
 
     
-  
-    <!-- 不蒜子统计PV -->
-    
-    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
-          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
-  
-  
-    <!-- 不蒜子统计UV -->
-    
-    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
-            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
-  
-  <br>
-
 
 
     
@@ -360,8 +349,6 @@
 
 
 
-
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 <!-- Plugins -->
