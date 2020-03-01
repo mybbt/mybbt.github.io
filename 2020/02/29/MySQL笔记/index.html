@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    705 字
+                    786 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -200,6 +200,13 @@
 <li>自连接+联表查询</li>
 <li>查询结果排序：<code>ORDER BY [ASC|DSC]</code>(升序|降序)</li>
 <li>查询结果分页：<code>LIMIT 6,5 //检索记录7-11行</code>或者<code>LIMIT 5 //检索记录前5行，相当于LIMIT 0,5</code>,<br>即<code>LIMIT 起始值 [,检索数目]</code>(LIMIT中计数默认从0开始；即第0行，第1行)</li>
+</ol>
+<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><ol start="16">
+<li>MySQL也有函数，例如第九条中的CONTACT(): 可查询文档或菜鸟教程</li>
+<li><code>coalesce(name, &#39;总数&#39;)</code>和<code>WITH ROLLUP</code></li>
+<li>MD5加密：<code>UPDATE 表名 SET pwd=MD5(pwd) where 约束条件</code>或者插入时加密：<code>INSERT INTO 表名 VALUES(...,...,MD5(...))</code></li>
+<li>事物(满足ACID原则)：<code>SAVEPOINT(保存点)</code>  <code>RELEASE SAVEPOINT</code>  <code>ROLLBACK TO SAVEPOINT</code></li>
+<li>索引：</li>
 </ol>
 
             <hr>
