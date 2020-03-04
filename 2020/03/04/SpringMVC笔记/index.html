@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    500 字
+                    706 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -182,7 +182,18 @@
 </ul>
 <ol start="6">
 <li>注解版: <img src="/img/blogpic/anno.jpg" alt="avatar"><br><img src="/img/blogpic/controller.jpg" alt="avatar"></li>
-<li></li>
+<li>RESTful是一种网络应用程序的设计风格和开发方式，基于HTTP，可以使用XML格式定义或JSON格式定义</li>
+</ol>
+<ul>
+<li>贴个博客: <a href="https://www.jianshu.com/p/ee92c9accedd" target="_blank" rel="noopener">https://www.jianshu.com/p/ee92c9accedd</a></li>
+<li>贴个博客: <a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></li>
+<li>针对这类情况有专门的<code>@PostMapping</code>或<code>@GetMapping</code>等等这类的组合起来的注解</li>
+<li>貌似RESTful没有完全统一的标准，只有宏观上的定义</li>
+</ul>
+<ol start="8">
+<li>不用视图解析器可以直接<code>return forward:...</code>,<code>return ...</code>,<code>return redirect:...</code></li>
+<li>关于<code>return redirect:...</code>和<code>return forward:...</code>这两个方法都不受视图解析器的影响，不管视图解析器存在与否，都不会影响；重定向相当于拼接地址直接访问，所以对于WEB-INF下面的文件不能访问；而转发则可以访问WEB-INF下面的文件</li>
+<li>待续…</li>
 </ol>
 
             <hr>
