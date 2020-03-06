@@ -115,7 +115,7 @@
               
                 <p class="mt-3">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-                  星期四, 三月 5日 2020, 3:30 下午
+                  星期五, 三月 6日 2020, 3:30 下午
                 </p>
               
 
@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    89 字
+                    590 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      2 分钟
                   </span>&nbsp;
                 
 
@@ -160,7 +160,30 @@
           <div class="markdown-body">
             <h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><ol>
 <li>MyBatis是一款针对数据库的持久层框架，它避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的<code>XML</code>或<code>注解</code>来配置和映射原生类型、接口和 POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录</li>
-<li></li>
+<li>导入MySQL的jar是5.1.47版本的</li>
+<li>MyBatis问题解决: </li>
+</ol>
+<ul>
+<li><img src="/img/blogpic/mybatis.jpg" alt="avatar">图中在try-catch中用<code>SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</code>再次创建了新的变量而覆盖了开始声明的变量；但是这个变量在try-catch中，出了try-catch就不再存在了，而<code>private static SqlSessionFactory sqlSessionFactory = null;</code>已经声明了这个变量，所以最后返回值出了问题；将<code>SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</code>改为<code>sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</code></li>
+</ul>
+<p><strong>如图</strong><img src="/img/blogpic/mybatis1.jpg" alt="avatar"></p>
+<ul>
+<li>上面的问题小结: 在try-catch中new的对象在try-catch外的范围不能使用；而上图中误将已经声明的变量在try-catch中再重新声明了一次，所以最后的返回值是null，而不是try-catch中读取的XML文件</li>
+<li>执行时找不到UserDao的UserMapper的配置文件，在maven中如下配置  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+但是出现这种问题的原因不知道，有待查询；先把mybatis跑起来再说</li>
+<li>贴个博客: <a href="https://www.cnblogs.com/aflyun/p/6780117.html" target="_blank" rel="noopener">https://www.cnblogs.com/aflyun/p/6780117.html</a></li>
+</ul>
+<ol start="4">
+<li><pre><code>&lt;mapper namespace=&quot;com.my.dao.UserDao&quot;&gt;
+ &lt;select id=&quot;getUserList&quot; resultType=&quot;com.my.pojo.User&quot;&gt;
+     select * from wo
+&lt;/select&gt;
+&lt;/mapper&gt;</code></pre>id是namespace指定的类中的方法名</li>
+<li>特殊方法; 使用Map方法的键值对，匹配SQL语句中的查询字段；<code>#{字段名}</code>中的字段名只需要和Map中的键对应，而不用创建单独的类文件来与属性名对应，比较万能，但是非标准(这里解释得比较模糊，想得起来就用，想不起来就老老实实单独写个类对应XML文件中的字段)</li>
+<li>当properties配置文件和properties的属性值冲突时，以外部配置文件的值为准</li>
+</ol>
+<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><ol start="7">
+<li>待续…</li>
 </ol>
 
             <hr>
