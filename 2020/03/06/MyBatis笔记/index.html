@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    590 字
+                    898 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      2 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -183,8 +183,16 @@
 <li>当properties配置文件和properties的属性值冲突时，以外部配置文件的值为准</li>
 </ol>
 <h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><ol start="7">
-<li>待续…</li>
+<li>Java实体类中的属性名需要与数据库字段名相同(这是在网上视频中提出的问题，我在自己的环境下测试int型字段不受影响，String类型的变量会受到这种影响)</li>
+<li>项目简单或者SQL语句不复杂可以使用注解简化操作，但是更多情况是使用XML配置文件</li>
+<li>MyBatis有些类似<code>&lt;where&gt;</code>的标签，在动态SQL文档中可以找到具体介绍</li>
+<li>MyBatis缓存有一级缓存和二级缓存,缓存的存在是为了优化性能</li>
 </ol>
+<ul>
+<li>一级缓存即本地的会话缓存，可以使用SqlSession测试或者清除，它仅仅对一个会话汇总的数据进行缓存</li>
+<li>二级缓存即全局缓存，一级缓存会被提升到二级缓存，作用域扩大(大概意思是这样，不太严谨)，接下来贴个官方文档的解释: <code>二级缓存是事务性的。这意味着，当 SqlSession 完成并提交时，或是完成并回滚，但没有执行 flushCache=true 的 insert/delete/update 语句时，缓存会获得更新</code></li>
+<li>缓存查询顺序，惯例贴个博客: <a href="https://www.cnblogs.com/yanl55555/p/11936765.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanl55555/p/11936765.html</a></li>
+</ul>
 
             <hr>
           </div>
