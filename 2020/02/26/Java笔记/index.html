@@ -237,7 +237,7 @@
 </ol>
 <ul>
 <li>泛型类；</li>
-<li>泛型接口: 实现泛型接口时如果不具体指定类型，则实现类也需要加上泛型（例如<code>class A&lt;T&gt; implements interfa&lt;T&gt;</code>）；</li>
+<li>泛型接口: 实现泛型接口时如果不具体指定类型，则实现类也需要加上泛型（例如<code>class A&lt;T&gt; implements interface&lt;T&gt;</code>）；</li>
 <li>泛型方法: <code>public &lt;T&gt; void test(T t){}</code>在静态方法中不能使用类定义泛型，若需要使用，只能使用静态方法自己定义的泛型<code>public static &lt;T&gt; void test(T t){}</code></li>
 </ul>
 <ol start="33">
@@ -251,14 +251,20 @@
 <ol start="34">
 <li>枚举类:<br><code>Season summer = Season.SUMMER;
 Summer.showInfo();</code><br>每个枚举都是单例模式</li>
-<li>注解: 编写注解需要使用@interface声明，在注解前面也需要加其他注解来限制编写的注解的作用范围:如下</li>
+<li>注解: 编写注解需要使用@interface声明，在注解前面也需要加其他注解来限制编写的注解的作用范围</li>
 <li>文件流: File类: 其中，<code>File.separator</code>为当前系统分隔符，File只能操作文件本身，比如删除文件，但不能改变文件的内容</li>
 <li>文件流: <code>FileOutputStream</code>输出流（字节流），将数据输出到某文件，<code>FileInputStream</code>输入流（字节流），从某文件中获取数据输入（可用byte数组存储）。<code>FileReader</code>输入流（字符流，可以char数组存储）</li>
 <li>缓冲流: 先将数据放入内存中，再在内存中操作数据，提升性能。<code>BufferedInputStream</code>和<code>BufferedOutputStream</code></li>
 <li>转换流: <code>InputStreamReader</code>等等。。不同文本格式的转换，比如GBK到UTB-8</li>
 <li>标准输入输出流</li>
 <li>对象流: 序列化和反序列化（包名，类名等要完全一致）</li>
-<li>反射机制: 前提是JVM已经加载过这个类<br>反射机制中的Class代表该字节码文件，Class类是JVM创建的表类信息的类，而Object是所有类的父类，可以利用<code>Class.class.isAssignableFrom(Object.class)</code>来判断子类父类关系<br>可以利用反射机制调用类的私有方法和私有变量（这类操作会破坏类的封装性）</li>
+<li>反射机制: 前提是JVM已经加载过这个类</li>
+</ol>
+<ul>
+<li>反射机制中的Class代表该字节码文件，Class类是JVM创建的表示类信息的类，而Object是所有类的父类，可以利用<code>Class.class.isAssignableFrom(Object.class)</code>来判断子类父类关系</li>
+<li>可以利用反射机制调用类的私有方法和私有变量（这类操作会破坏类的封装性）</li>
+</ul>
+<ol start="43">
 <li>Java动态代理: 当需要修改方法执行前或执行后的操作时，利用动态代理可以简化操作，想要通过<code>Proxy.newProxyInstance</code>方法被代理则此对象的类需要实现接口<br>JDK实现:</li>
 </ol>
 <ul>
