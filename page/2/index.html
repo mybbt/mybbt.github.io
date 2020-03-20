@@ -18,7 +18,7 @@
   <meta name="description" content="基于Hexo">
   <meta name="author" content="mybbt">
   <meta name="keywords" content="">
-  <title>归档 ~ mybbt</title>
+  <title>mybbt</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
@@ -41,7 +41,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -114,6 +114,10 @@
           </div>
 
           
+            <div class="scroll-down-bar">
+              <i class="fas fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
         </div>
       </div>
     </div>
@@ -129,78 +133,45 @@
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 11 篇文章</p>
-  <hr>
-  
+
+  <div class="row mx-auto index-card">
     
-      
-      <p class="h5">2020</p>
     
-    <a href="/2020/03/19/%E3%80%8ASpring%E5%AE%9E%E6%88%98%E3%80%8B%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《Spring实战》笔记</span>
-      <span style="float: right;">03-19</span>
-    </a>
-  
+      <div class="col-12 col-md-4 m-auto">
+        <a href="/2020/02/25/hello-world/" target="_blank">
+          <img src="/img/mypic/hello.jpg" alt="Hello World"
+               class="index-img img-fluid rounded index-thumbnails">
+        </a>
+      </div>
     
-    <a href="/2020/03/06/MyBatis%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MyBatis笔记</span>
-      <span style="float: right;">03-06</span>
-    </a>
-  
-    
-    <a href="/2020/03/04/SpringMVC%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">SpringMVC笔记</span>
-      <span style="float: right;">03-04</span>
-    </a>
-  
-    
-    <a href="/2020/03/02/Web%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Web笔记</span>
-      <span style="float: right;">03-02</span>
-    </a>
-  
-    
-    <a href="/2020/03/02/AJAX+JSON%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">AJAX+JSON笔记</span>
-      <span style="float: right;">03-02</span>
-    </a>
-  
-    
-    <a href="/2020/02/29/MySQL%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">MySQL笔记</span>
-      <span style="float: right;">02-29</span>
-    </a>
-  
-    
-    <a href="/2020/02/27/Spring%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Spring笔记</span>
-      <span style="float: right;">02-27</span>
-    </a>
-  
-    
-    <a href="/2020/02/27/%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">图片问题</span>
-      <span style="float: right;">02-27</span>
-    </a>
-  
-    
-    <a href="/2020/02/26/Java%E7%AC%94%E8%AE%B0/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">Java笔记</span>
-      <span style="float: right;">02-26</span>
-    </a>
-  
-    
-    <a href="/2020/02/25/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">我的博客</span>
-      <span style="float: right;">02-25</span>
-    </a>
-  
-</div>
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a href="/2020/02/25/hello-world/">
+        <p class="h4 index-header">Hello World</p>
+      </a>
+
+      <a href="/2020/02/25/hello-world/">
+        
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1"></div>
+        </div>
+      </a>
+
+      <div class="index-btm">
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-02-25&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
 
   <nav aria-label="index posts navigation">
     <span class="pagination pg-blue justify-content-center mt-5" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fas fa-angle-double-right"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-double-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </span>
   </nav>
   
@@ -209,6 +180,7 @@
       ele.href += '#board';
     }
   </script>
+
 
 
               </div>
@@ -302,7 +274,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "归档&nbsp;",
+        "φ(❐_❐✧ 人丑就要多读书&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
