@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    374 字
+                    1k 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      3 分钟
                   </span>&nbsp;
                 
 
@@ -180,6 +180,47 @@
 </ol>
 <h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><ol start="10">
 <li>使用<code>@profile</code>可以简化不同环境的配置，通过spring.profiles.active和spring.profiles.default来激活profile，active的优先级高于default；如果active和default都不存在，则没有激活的profile，因此只会创造那些没有定义在profile的bean</li>
+<li><code>@profile</code>利用<code>@Conditional</code>来实现不同条件下配置的选择</li>
+<li><code>@Qualifier</code>可以用来将bean设置为首选项来消除歧义，当具有多个<code>@Primary</code>时，可以使用<code>@Qualifier</code>指定具体的bean；<code>@Qualifier</code>既可以在注入点定义，也可以在bean定义的地方使用(类似于取一个别名)</li>
+<li><code>@Scope</code>用来声明bean的作用域，默认是Singleton(单例)，其中还有代理模式可以处理不同作用域的交互</li>
+</ol>
+<ul>
+<li>单例(Singleton)：在整个应用中，只对bean实例化一次</li>
+<li>原型(Prototype)：每次注入或者通过Spring应用上下文获取的时候，都会创建一个新的bean实例</li>
+<li>会话(Session)：每次会话都创建一个bean实例</li>
+<li>请求(Request)：每次请求都创建一个bean实例</li>
+</ul>
+<ol start="14">
+<li>SpEL表达式</li>
+</ol>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><ol start="15">
+<li>横切关注点就是散布于应用中的各种功能，而将这些功能与业务逻辑解耦就是AOP所实现的 <img src="/img/blogpic/aop.jpg" alt="avatar"></li>
+<li>AOP术语：</li>
+</ol>
+<ul>
+<li>通知(Advice)：    定义了切面是什么以及何时执行</li>
+<li>连接点(Join point)：执行过程中可以应用通知的点</li>
+<li>切点(Pointcut)：应用特定通知的连接点</li>
+<li>切面(Aspect)：通知+切点</li>
+<li>引入(Introduction)：向现有类添加新方法或属性，并无需修改现有类</li>
+<li>织入(Weaving)：把切面应用到目标对象并生成新的代理对象的过程</li>
+</ul>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><ol start="17">
+<li>除了Web.xml配置DispatcherServler，还可以通过继承<code>AbstractAnnotationConfigDispatcherServletInitializer</code>自动配置DispatcherServlet和Spring应用上下文(需要Servlet3.0)</li>
+<li>MockMvc可以用来测试web项目</li>
+</ol>
+<ul>
+<li>在idea中手动创建Lib并导入jar包，jar包版本需要相同(同一个类可能存在不同jar包中，这些jar彼此之间版本不同，所以会冲突)，否则可能会报错java.lang.NoSuchMethodError(在使用MockMvc时发现的错误)</li>
+<li>若是idea，还需要在项目 Facets中修改 Web resource Directory为webapp(这是我的文件命名，根据自己的文件命名修改)</li>
+<li>使用实现AbstractAnnotationConfigDispatcherServletInitializer来自动配置DispatcherServler，可以删除web.xml文件，同时命名约束要注意，不同包可能有类似约束容易混淆</li>
+</ul>
+<ol start="19">
+<li>需要区分运行时常量和编译时常量，@RequestParam中的默认值需要的编译时常量，若用 Long.String(Long.MAX_VALUE) 则是运行时常量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private static final String MAX_LONG_AS_STRING &#x3D; Long.MAX_VALUE+&quot;&quot;;&#x2F;&#x2F;若是MAX_LONG_AS_STRING &#x3D; Long.String(Long.MAX_VALUE)就会报错</span><br><span class="line">&#x2F;&#x2F;报错内容为 Attribute value must be constant</span><br><span class="line">    @RequestMapping(method &#x3D; RequestMethod.GET)</span><br><span class="line">    public List&lt;Spittle&gt; spittles(</span><br><span class="line">            @RequestParam(value &#x3D; &quot;max&quot;, defaultValue &#x3D; MAX_LONG_AS_STRING)long max,</span><br><span class="line">            @RequestParam(value &#x3D; &quot;count&quot;,defaultValue &#x3D; &quot;20&quot;)int count)&#123;</span><br><span class="line">        return spittleRepository.findSpittles(max, count);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<h2 id="第六章"><a href="#第六章" class="headerlink" title="第六章"></a>第六章</h2><ol start="20">
 <li>待续…</li>
 </ol>
 
