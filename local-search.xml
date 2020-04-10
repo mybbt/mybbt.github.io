@@ -8,7 +8,7 @@
     <link href="/2020/04/10/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <url>/2020/04/10/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     
-    <content type="html"><![CDATA[<ol><li><p>模仿Tomcat实现的一个非常简陋的Web服务器</p></li><li><p>阅读资料以及代码来源: 《深入剖析Tomcat》</p></li><li><p>源码地址: <a href="https://github.com/mybbt/HowTomcatWorks" target="_blank" rel="noopener">https://github.com/mybbt/HowTomcatWorks</a></p></li><li><p>笔记都穿插在源码注释以及每章节的Readme文件中</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>模仿Tomcat实现的一个非常简陋的Web服务器</p></li><li><p>参考资料以及代码来源: 《深入剖析Tomcat》</p></li><li><p>源码地址: <a href="https://github.com/mybbt/HowTomcatWorks" target="_blank" rel="noopener">https://github.com/mybbt/HowTomcatWorks</a></p></li><li><p>笔记都穿插在源码注释以及每章节的Readme文件中</p></li></ol>]]></content>
     
     
     
