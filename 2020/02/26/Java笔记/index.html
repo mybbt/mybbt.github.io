@@ -202,8 +202,8 @@
 <li><code>final</code>修饰的类不能被继承，<code>final</code>修饰的变量不能被修改且必须显示赋值，<code>final</code>饰的方法不能被子类重写</li>
 </ol>
 <h2 id="第五天"><a href="#第五天" class="headerlink" title="第五天"></a>第五天</h2><ol start="22">
-<li>Abstract修饰抽象方法和抽象类，抽象类不能实例化，但可以由构造器，继承抽象类的子类必须重写抽象类中的抽象方法，抽象方法是只有声明没有实现。若某类中有抽象方法，则该类必须声明为抽象类</li>
-<li>模板设计模式: 定义一个抽象类，定义一个抽象类，子类继承抽象类，可以直接使用而不用重写部分已经写好的通用方法。</li>
+<li>Abstract修饰抽象方法和抽象类，抽象类不能实例化，但可以拥有构造器，继承抽象类的子类必须重写抽象类中的抽象方法，抽象方法是只有声明没有实现。若某类中有抽象方法，则该类必须声明为抽象类</li>
+<li>模板设计模式: 定义一个抽象类，子类继承抽象类，可以直接使用而不用重写部分已经写好的通用方法。</li>
 <li>接口与抽象类的区别:</li>
 </ol>
 <ul>
@@ -215,8 +215,6 @@
 </ol>
 <ul>
 <li>定义接口，将实现同一接口的不同类放入工厂，并延迟到子类再决定实例化哪一个类。  </li>
-<li>定义一个产品接口 2.创建多个实现接口的不同实体类</li>
-<li>创建一个工厂，基于开发者对实体类的需求返回类</li>
 </ul>
 <ol start="26">
 <li>内部类也是类，但特殊点在若内部类是<code>static</code>修饰，就不能使用外部类的非static的成员变量。而非static的内部类中的成员不能声明为static（内部类主要用来解决JAVA不能多层继承的问题）</li>
@@ -262,6 +260,7 @@ Summer.showInfo();</code><br>每个枚举都是单例模式</li>
 </ol>
 <ul>
 <li>反射机制中的Class代表该字节码文件，Class类是JVM创建的表示类信息的类，而Object是所有类的父类，可以利用<code>Class.class.isAssignableFrom(Object.class)</code>来判断子类父类关系</li>
+<li>贴个博客：<a href="https://blog.csdn.net/u014704496/article/details/41316827" target="_blank" rel="noopener">https://blog.csdn.net/u014704496/article/details/41316827</a></li>
 <li>可以利用反射机制调用类的私有方法和私有变量（这类操作会破坏类的封装性）</li>
 </ul>
 <ol start="43">
