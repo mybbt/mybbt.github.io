@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    430 字
+                    1.1k 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      1 分钟
+                      4 分钟
                   </span>&nbsp;
                 
 
@@ -165,6 +165,7 @@
 </ol>
 <ul>
 <li>贴个博客：<a href="https://www.cnblogs.com/mr-wid/archive/2013/01/22/2871105.html" target="_blank" rel="noopener">https://www.cnblogs.com/mr-wid/archive/2013/01/22/2871105.html</a></li>
+<li>vector几种初始化方式：<a href="https://blog.csdn.net/weixin_42380203/article/details/80706422" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42380203/article/details/80706422</a></li>
 </ul>
 <ol start="3">
 <li>使用指针寻址时，一定要先判断指针是否为空指针<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;判断方式</span><br><span class="line">int *pv &#x3D; 0;&#x2F;&#x2F;此时的0是地址，代表 pv 为null指针</span><br><span class="line">if(pv)</span><br><span class="line">	cout&lt;&lt;&quot;不为空&quot;;</span><br><span class="line">else</span><br><span class="line">	cout&lt;&lt;&quot;为空&quot;;</span><br></pre></td></tr></table></figure></li>
@@ -176,6 +177,18 @@
 </ul>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><ol start="5">
 <li>void test(int)和void test(int &amp;)的区别是前者会创建副本，并不影响原有变量，后者传入变量本身，会影响原有变量（前者为传值，后者为传址）</li>
+</ol>
+<ul>
+<li>引用有两个好处：第一，可以直接对传入对象修改；第二，可以降低复制大型对象的额外负担</li>
+</ul>
+<ol start="6">
+<li>指针和引用的区别：第一，指针使用箭头成员选择运算符(-&gt;)，引用则使用点成员选择运算符(.)；第二，指针即可能指向某个实际对象，也可能不指向某个实际对象，使用前需要判断其值非零，而引用则必定代表某个对象，不需要检查<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;指针</span><br><span class="line">void display(const vector&lt;int&gt; *vec)</span><br><span class="line">&#123;</span><br><span class="line">	if(!vec)&#x2F;&#x2F;此时vec为零，代表指针为空，不指向实际对象</span><br><span class="line">		return;</span><br><span class="line">	for(int ix &#x3D; 0;ix &lt; vec-&gt;size();ix++)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;输出值</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;引用</span><br><span class="line">void display(const vector&lt;int&gt; &amp;vec)</span><br><span class="line">&#123;</span><br><span class="line">	for(int ix &#x3D; 0; ix &lt; vec.size();ix++)</span><br><span class="line">	&#123;</span><br><span class="line">		&#x2F;&#x2F;输出值</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>声明局部对象时，若以指针或者引用形式返回都是错误的，因为在函数执行完成后，局部对象将不复存在。而将对象以传值方式返回，则不会出错，因为返回的是对象的副本，在函数之外仍然存在。（name return value）NRV优化，深入解释见[LIPPMAN98]的14.8节。</li>
+<li>使用new分配堆内存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int *pi;</span><br><span class="line">&#x2F;&#x2F;第一种方式，从堆中分配一个类型为int的对象，再将其地址赋值给pi</span><br><span class="line">pi &#x3D; new int;</span><br><span class="line">&#x2F;&#x2F;第二种方式，在第一种方式的基础上初始化int对象的值</span><br><span class="line">pi &#x3D; new int(1024);</span><br><span class="line">&#x2F;&#x2F;第三种方式，分配数组，但是无法直接初始化值</span><br><span class="line">pi &#x3D; new int[10];</span><br><span class="line">&#x2F;&#x2F;释放堆内存，如果不释放则会导致内存泄漏(memory leak)</span><br><span class="line">delete pi;&#x2F;&#x2F;此处编译器会自动进行if(pi !&#x3D; 0)的检测，无需手动检查</span><br><span class="line">&#x2F;&#x2F;释放数组形式的堆内存</span><br><span class="line">delete []pi;</span><br></pre></td></tr></table></figure></li>
+<li>设置默认参数值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void bubble_sort(ofstream &amp;os &#x3D; cout)&#x2F;&#x2F;用户不指定，则默认使用cout输出</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F;操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+默认参数值设置有两个规则：第一，默认参数解析从右边开始，若某个参数设置了默认值，则它的右边所有参数都需要设置默认值；第二，默认参数值只能设置一次，可以在函数声明处设置，也可以在函数定义处设置，但是只能在两个地方二选一(书中推荐在函数声明处设置)</li>
+<li>静态局部对象，作用域与局部对象相同，不同之处在于静态局部对象的生命期贯穿整个程序运行期间，存储在静态存储区</li>
+<li></li>
 </ol>
 
             <hr>
