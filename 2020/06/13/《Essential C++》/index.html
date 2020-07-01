@@ -124,7 +124,7 @@
                   
                   &nbsp;<i class="far fa-chart-bar"></i>
                   <span class="post-count">
-                    1.1k 字
+                    1.5k 字
                   </span>&nbsp;
                 
 
@@ -132,7 +132,7 @@
                   
                   &nbsp;<i class="far fa-clock"></i>
                   <span class="post-count">
-                      4 分钟
+                      6 分钟
                   </span>&nbsp;
                 
 
@@ -188,8 +188,21 @@
 <li>设置默认参数值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void bubble_sort(ofstream &amp;os &#x3D; cout)&#x2F;&#x2F;用户不指定，则默认使用cout输出</span><br><span class="line">&#123;</span><br><span class="line">	&#x2F;&#x2F;操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 默认参数值设置有两个规则：第一，默认参数解析从右边开始，若某个参数设置了默认值，则它的右边所有参数都需要设置默认值；第二，默认参数值只能设置一次，可以在函数声明处设置，也可以在函数定义处设置，但是只能在两个地方二选一(书中推荐在函数声明处设置)</li>
 <li>静态局部对象，作用域与局部对象相同，不同之处在于静态局部对象的生命期贯穿整个程序运行期间，存储在静态存储区</li>
-<li></li>
+<li>函数指针，必须指明函数返回类型以及参数列表<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;函数声明</span><br><span class="line">const vector&lt;int&gt; *fibon_seq(int);</span><br><span class="line">const vector&lt;int&gt; *lucas_seq(int);</span><br><span class="line">const vector&lt;int&gt; *pell_seq(int);</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	seq(1,fibon_seq);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;函数定义</span><br><span class="line">bool seq_elem(int pos,const vector&lt;int&gt;* (*seq_ptr)(int))&#x2F;&#x2F;函数指针</span><br><span class="line">&#123;</span><br><span class="line">	const vector&lt;int&gt; *pseq &#x3D; seq_ptr(pos);</span><br><span class="line">	&#x2F;&#x2F;一系列操作</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;............</span><br></pre></td></tr></table></figure></li>
+<li>头文件中一般只放函数声明，不放入函数定义，满足定义一次的规则，但是有两个例外；第一个例外是inline关键字修饰的函数(解释见如下两个博客);第二个例外是const关键字修饰的对象，只在当前文件下可见,所以可以在多个程序代码文件中再次定义</li>
 </ol>
+<ul>
+<li>贴个关于头文件中inline关键字的博客：<a href="https://blog.csdn.net/chenlei0630/article/details/45720913" target="_blank" rel="noopener">https://blog.csdn.net/chenlei0630/article/details/45720913</a></li>
+<li>再贴个博客：<a href="https://blog.csdn.net/Ronnie_Hu/article/details/62238311" target="_blank" rel="noopener">https://blog.csdn.net/Ronnie_Hu/article/details/62238311</a></li>
+</ul>
+<ol start="13">
+<li>使用双引号引用文件默认在当前文件同一目录下寻找，使用尖括号引用文件则默认路径寻找（不一定在文件同一目录下）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt; &#x2F;&#x2F;默认路径下寻找</span><br><span class="line">#include&quot;million.h&quot; &#x2F;&#x2F;当前文件路径下寻找</span><br></pre></td></tr></table></figure></li>
+<li>关于extern关键字及部分相关关键字的解释：<a href="https://www.cnblogs.com/yuxingli/p/7821102.html" target="_blank" rel="noopener">https://www.cnblogs.com/yuxingli/p/7821102.html</a></li>
+</ol>
+<ul>
+<li>贴个博客：<a href="https://blog.csdn.net/fengbingchun/article/details/78941738" target="_blank" rel="noopener">https://blog.csdn.net/fengbingchun/article/details/78941738</a></li>
+</ul>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><p>15. </p>
 
             <hr>
           </div>
